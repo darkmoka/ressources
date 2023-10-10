@@ -1,0 +1,21 @@
+# Here's how to use this script:
+
+This script uses the **rsync** command to perform incremental backups to an external storage device or remote server. Please note that this is a basic script, and you may need to customize it to suit your specific requirements.
+
+1. Replace the placeholders ``/path/to/source``, ``/path/to/backup``, ``/path/to/backup.log``, and ``/path/to/exclude.txt`` with your actual source directory, backup directory, log file path, and a list of files or directories you want to exclude from the backup, respectively.
+
+2. Save the script to a file, e.g., ``backup.sh``.
+
+3. Make the script executable:
+
+bash
+``chmod +x backup.sh``
+
+4. You can schedule this script to run periodically using **cron** or any other task scheduler tool. For example, to run the script every day at 2 AM, you can add the following line to your crontab:
+
+bash
+``0 2 * * * /path/to/backup.sh``
+
+5. Ensure that the script is regularly executed as per your schedule to automate your backups.
+
+Please be cautious when setting up and running backup scripts, especially in a production environment. Make sure to test your backup and restore procedures thoroughly to ensure data integrity and availability.
