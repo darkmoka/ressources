@@ -16,6 +16,8 @@ ____
 # 1. Types scalaires
 Différents types de variables scalaires : entiers, réels.
 
+![Alt text](image.png)
+
 ## Nombre
 
     1
@@ -196,4 +198,6 @@ https://online-json.com/
 https://grafikart.fr/tutoriels/json-77
 
 https://www.json.org/json-en.html
+
+https://rpaframework.org/libraries/json/
 
