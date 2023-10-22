@@ -1,0 +1,24 @@
+{
+    "title": "Tutoriel JSON",
+    "content": "..."
+    "author": {
+        "firestname": "Izabela",
+        "Lastname": "Kasiarz",
+        "birthyear": 1991
+    },
+    "comments": []
+        { 
+            "usernam": "John Doe",
+            "content": "Super exercice",
+            "replies": []
+        }
+        {
+            "username": "Jane Doe",
+            "content": "Essaie encore"
+            "replies": {
+                "username": "John Doe"
+                "content": "Je suis d'accord",
+                "replies": []
+            }
+        }
+}
