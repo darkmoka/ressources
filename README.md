@@ -1,5 +1,10 @@
-### TSSR.ressources
+TSSR & ISTQB 2023
+____
+System and Network Technician and Software Tester
 
-TSSR 2023
---------
+Agenda 
+____
+TSSR.ressources
 
+
+ISTQB.ressources
