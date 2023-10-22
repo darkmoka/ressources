@@ -190,3 +190,21 @@ Built-in variables related to the operating system ease making the test data ope
         Example 2
             Do X    ${3.14}    ${-1e-4}        # Do X gets floating point numbers 3.14 and -0.0001
 
+# JSON - Manipulate JSON objects
+
+![](image.png)
+
+JSON is a library for manipulating JSON files and strings.
+
+JSON is a common data interchange format inspired by a subset of the Javascript programming language, but these days is a de facto standard in modern web APIs and is language agnostic.
+
+# JSONPath
+
+
+
+TODO: 
+https://rpaframework.org/libraries/json/
+https://rpaframework.org/libdoc/RPA_JSON.html
+
+Créer des listes 
+https://robotframework.org/robotframework/latest/libraries/Collections.html
