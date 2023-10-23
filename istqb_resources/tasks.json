@@ -1,0 +1,32 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Format RobotFramework files",
+            "type": "process",
+            "command": "robotidy",
+            "args": [
+                "tools/devices/IowaTestClient_keywords",
+                "tools/devices/IowaTestClient_resources",
+                "test_helper/keywords/api_v2_public_advanced_alaska",
+                "test_helper/keywords/api_v2_public_alaska",
+                "test_helper/keywords/api_v3_public_alaska",
+                "test_helper/keywords/api_v3_public_low_level_alaska",
+                "test_helper/keywords/device_iowa",
+                "test_helper/keywords/global",
+                "test_helper/keywords/notifications_servers",
+                "tests"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
