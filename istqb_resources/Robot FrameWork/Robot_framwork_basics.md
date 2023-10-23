@@ -159,3 +159,39 @@ With keywords
         Login Form Should Be Visible After Successful Logout
             [Setup]    Do Successful Login
             # rest of the implementation
+
+## Resource files 
+
+The biggest difference between resource files and test suite files is that in a resource file you don't have the *** Test Cases *** or *** Tasks *** table. It is recommended to use a .resource extension with resource files (instead of the otherwise used .robot). This is just for separating resource files from test files. The functionality will remain the same.
+
+## Test templates
+
+**Test templates convert normal keyword-driven test cases into data-driven tests. **
+
+- Whereas the body of a keyword-driven test case is constructed **from keywords and their possible arguments**, test cases with template contain **only the arguments for the template keyword**. 
+
+- **Instead of repeating the same keyword multiple times** per test and/or with all tests in a file, it is possible to use it only per test or just once per file.
+
+### Basic usage 
+
+        *** Test Cases ***
+        Normal test case
+            Example keyword    first argument    second argument
+
+        Templated test case
+            [Template]    Example keyword
+            first argument    second argument
+
+        *** Settings ***
+        Test Template    Example keyword
+
+        *** Test Cases ***
+        Templated test case
+            first round 1     first round 2
+            second round 1    second round 2
+            third round 1     third round 2
+
+# Different test case styles 
+## Keywork-driven style
+## Data-driven style
+## Behavior-driven style 
