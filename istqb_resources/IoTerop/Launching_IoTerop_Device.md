@@ -2,64 +2,87 @@
 
 Ports Wireshark : 
 
-udp.port == 5683 || udp.port == 5684 || udp.port == 5783 || udp.port == 5784 || tcp.port == 5683 || tcp.port == 5684
+      udp.port == 5683 || udp.port == 5684 || udp.port == 5783 || udp.port == 5784 || tcp.port == 5683 || tcp.port == 5684
 
-# URI
+# 1. URI
 ## STAGING
-coaps://datagram-ingress.alaska-staging.ioterop.com
+
+      coaps://datagram-ingress.alaska-staging.ioterop.com
 
 ex : 
 
-{ "Server": { "Operation": "Add", "Ssid": 1, "Uri": "coaps://datagram-ingress.alaska-staging.ioterop.com", "Lifetime": 60, "Security":"Psk", "SecureInfo":{"Identity":"IOWAIKA", "Key":"MDEyMzQ1Njc4OQ=="}}}
-{ "Fwu": { "Operation": "Add", "PackageName": "package name", "PackageVersion": "1.0" }}
-{"Lwm2m": { "Operation": "Start"}}
+      { "Server": { "Operation": "Add", "Ssid": 1, "Uri": "coaps://datagram-ingress.alaska-staging.ioterop.com", "Lifetime": 60, "Security":"Psk", "SecureInfo":{"Identity":"IOWAIKA", "Key":"MDEyMzQ1Njc4OQ=="}}}
+      { "Fwu": { "Operation": "Add", "PackageName": "package name", "PackageVersion": "1.0" }}
+      {"Lwm2m": { "Operation": "Start"}}
 
 ## DEVENV
-coaps://datagram-alaska-ikqa.hypernova.ioterop.com
 
-{ "Server": { "Operation": "Add", "Ssid": 1, "Uri": "coaps://datagram-alaska-staging.hypernova.ioterop.com", "Lifetime": 60, "Security":"Psk", "SecureInfo":{"Identity":"IOWAIKA", "Key":"MDEyMzQ1Njc4OQ=="}}}
-{ "Fwu": { "Operation": "Add", "PackageName": "package name", "PackageVersion": "1.0" }}
-{"Lwm2m": { "Operation": "Start"}}
+      coaps://datagram-alaska-ikqa.hypernova.ioterop.com
+
+ex : 
+
+      { "Server": { "Operation": "Add", "Ssid": 1, "Uri": "coaps://datagram-alaska-staging.hypernova.ioterop.com", "Lifetime": 60, "Security":"Psk", "SecureInfo":{"Identity":"IOWAIKA", "Key":"MDEyMzQ1Njc4OQ=="}}}
+      { "Fwu": { "Operation": "Add", "PackageName": "package name", "PackageVersion": "1.0" }}
+      {"Lwm2m": { "Operation": "Start"}}
 
 ## PROD
-coaps://datagram-ingress.alaska.ioterop.com
 
-{ "Server": { "Operation": "Add", "Ssid": 1, "Uri": "coaps://datagram-ingress.alaska.ioterop.com", "Lifetime": 60, "Security":"Psk", "SecureInfo":{"Identity":"IOWAIKA", "Key":"MDEyMzQ1Njc4OQ=="}}}
-{ "Fwu": { "Operation": "Add", "PackageName": "package name", "PackageVersion": "1.0" }}
-{"Lwm2m": { "Operation": "Start"}}
+      coaps://datagram-ingress.alaska.ioterop.com
+
+ex : 
+
+      { "Server": { "Operation": "Add", "Ssid": 1, "Uri": "coaps://datagram-ingress.alaska.ioterop.com", "Lifetime": 60, "Security":"Psk", "SecureInfo":{"Identity":"IOWAIKA", "Key":"MDEyMzQ1Njc4OQ=="}}}
+      { "Fwu": { "Operation": "Add", "PackageName": "package name", "PackageVersion": "1.0" }}
+      {"Lwm2m": { "Operation": "Start"}}
 
 ## TCP
-
 ## UDP
-
 ## NOSEC
+
+      coap://datagram-alaska-no-sec-ikqa.hypernova.ioterop.com
 
 ### Boostrap NOSEC
 
-{ "BootstrapServer": { "Operation": "Add", "Uri": "coap://datagram-alaska-no-sec-ikqa.hypernova.ioterop.com"}}
+      { "BootstrapServer": { "Operation": "Add", "Uri": "coap://datagram-alaska-no-sec-ikqa.hypernova.ioterop.com"}}
 
 ### Staging NOSEC
 
-{ "Server": { "Operation": "Add", "Ssid": 1, "Uri": "coap://datagram-no-sec-ingress.alaska-staging.ioterop.com", "Lifetime": 60 }}
+      { "Server": { "Operation": "Add", "Ssid": 1, "Uri": "coap://datagram-no-sec-ingress.alaska-staging.ioterop.com", "Lifetime": 60 }}
 
-
-
-### Staging NOSEC
+      ??
 
 ### DevEnv NOSEC
 
+      { "Server": { "Operation": "Add", "Ssid": 1, "Uri": "coap://datagram-alaska-no-sec-ikqa.hypernova.ioterop.com", "Lifetime": 60 }}
+
 ### PROD NOSEC
+
+      { "Server": { "Operation": "Add", "Ssid": 1, "Uri": "coap://datagram-no-sec-ingress.alaska.ioterop.com", "Lifetime": 60 }}
 
 # 1. Donwload gitlab folder name
 
-git@gitlab.com:IoTerop/PaaS/tests/alaska-system-tests.git
-# 2. Payload 
-## 3. 
+      git@gitlab.com:IoTerop/PaaS/tests/alaska-system-tests.git
 
+https://gitlab.com/IoTerop/PaaS/tests/alaska-system-tests
 
-# Commande line 
+# Ports to listen on Wireshark 
 
-    # To run the device 
+      | udp.port == 5683 | 
+      | udp.port == 5684 | 
+      | udp.port == 5783 | 
+      | udp.port == 5784 | 
+      
+      | tcp.port == 5683 | 
+      | tcp.port == 5684 | 
+
+    "coap://{hostname}[:{port}]" for unsecure UDP transport 
+    "coaps://{hostname}[:{port}]" for secure UDP transport (using DTLS) 
+    "coap+tcp://{hostname}[:{port}]" for unsecure TCP transport 
+    "coaps+tcp://{hostname}[:{port}]" for secure TCP transport (using TLS) 
+    "sms://{msisdn number}" for SMS binding in binary mode 
+    "lorawan://{FPort}" for LoRaWAN binding 
+
+# To run the device 
 
         pythonX.X main.py -s config/start.json -vvv
         pythonX.X main.py -s config/start.json -p  config/temp_settings_2.json -vvv
@@ -70,7 +93,6 @@ git@gitlab.com:IoTerop/PaaS/tests/alaska-system-tests.git
 ### Certificat
 
 CA_DMS
-
 
 reg dm certificate - YES
 
@@ -111,8 +133,8 @@ MIIBVTCB+wIUTm2Z0iILlmTzOB5hyAbLv86NIgwwCgYIKoZIzj0EAwIwRTELMAkGA1UEBhMCQVUxEzAR
 
 Issue propre : 
 
-# Description
-# Steps to Reproduce
+Description
+Steps to Reproduce
 
 1. Provision device 
 - Device ID : IKDevie_ID
@@ -146,11 +168,6 @@ Device start.json :
 ```
 
 ![Alt text](image.png)
-
-## Expected Result
-
-See the possibility to make a key rotation. 
-
 
 ## Application security 
 ## Oscor 
