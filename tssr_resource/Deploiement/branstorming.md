@@ -91,5 +91,102 @@ Alternative pour windows 11 :
 * Clonezilla Server
 * FOG project  
 
+Prérequis : 
+* Windows
+* Système hyperviseur (VMWare)
+* 4 machines virtuelles 
+* 1 Server AD
+* 1 server linux 
+* 1 Windows 10
+* IPBX (freepbx, xivo)
 
 
+1. Le PC est prêt (configuré)
+2. Sysprep.exe : généraliser ou audit system
+3. BootPXE pour aller chercher sur le server 
+4. Créer une image à partir de la machine : le .wim 
+5. 
+
+
+SSH
+SUDO user tech
+ServerWeb
+commandes shown / chmode 
+
+
+apt get sudo
+
+sudoers : all all all 
+
+ftp : apt install vsftpd 
+
+en33
+192.168.152.139/24
+
+en34
+
+172
+
+LAN SEGMENT
+NAT > pour les installation
+SERVER DHCP
+
+
+172.20.0.2 (theo)
+
+
+172.19.0.1
+255.255.255.0
+172.19.0.0
+
+
+    1  nano /etc/network/interfaces
+    2  nano /etc/network/interfaces
+    3  apt-get install isc-dhcp-server
+    4  nano /etc/dhcp/dhcpd.conf
+    5  nano /etc/default/isc-dhcp-server
+    6  systemctl restart isc-dhcp-server
+    7  systemctl enable isc-dhcp-server
+    8  systemctl status isc-dhcp-server
+    9  journal -u isc-dhcp-server.service
+   10  Envoyer un message dans Théo_UE, Allan Benayoun, +Chikamasa
+   11  journal -u isc-dhcp-server.service
+   12  systemctl status isc-dhcp-server
+   13  journal -u isc-dhcp-server.service
+   14  journal -u isc-dhcp-server.service
+   15  journalctl -u isc-dhcp-server.service
+   16  nano /etc/dhcp/dhcpd.conf
+   17  apt-get update
+   18  apt-get upgrade
+   19  apt-get install sudo
+   20  nano /etc/sudoers
+   21  clear
+   22  addgroup ssh_group
+   23  adduser -a -G ssh_group toor
+   24  usermod -a -G ssh_group toor
+   25  nano /etc/ssh/sshd_config
+   26  systemctl restart ssh
+   27  ip a
+   28  nano /etc/network/interfaces
+   29  systemctl networking restart
+   30  sudo systemctl networking restart
+   31  sudo systemctl restart networking
+   32  ip a
+   33  systemctl restart networking
+   34  ip a
+   35  reboot
+   36  clear
+   37  ip a
+   38  dhcp
+   39  clear
+   40  systemctl status isc-dhcp-server
+   41  journal isc-dhcp-server
+   42  journalctl -u isc-dhcp-server.service
+   43  nano /etc/default/isc-dhcp-server
+   44  systemctl restart networking
+   45  systemctl restart isc-dhcp-server
+   46  systemctl enable isc-dhcp-server
+   47  systemctl status isc-dhcp-server
+   48  reboot
+   49  systemctl status isc-dhcp-server
+   50  history
