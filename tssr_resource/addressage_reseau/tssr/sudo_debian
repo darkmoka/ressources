@@ -1,0 +1,89 @@
+SERVER DEBIAN 12
+1.	Se loger la première fois en root pour configurer
+ 
+(DEBIAN11
+ )
+2.	Faire apt update apt upgrade
+3.	Voir la liste des users cd /etc/password
+ 
+
+On voit le profil tech 
+
+Les mots de passe dans cat /etc/shadow 
+ 
+
+Définir user en sudoers
+
+![Alt text](image-2.png)
+
+LAMP
+
+ 
+Contrôler :
+La version du server 
+cat /etc/debian_version
+
+ 
+Contrôler les sources listes 
+ 
+N’indique qu’un doc compressé dans manuel. 
+ 
+Mais il existe bien, et il y a bien un # devant le premier deb 
+Apt  update / apt upgrade
+Ls /etc/ = pour voir tous les fichiers de config 😊
+Pour gérer les profils sudo : sudoers (si non installer : apt install sudo blablabla)
+cat /etc/sudoers 
+ 
+Nano /etc/sudoers
+ 
+ 
+Revenir sur profile tech : exit
+ 
+Ajouter un utilisateur (+ groupe est ajouté automatiquement)
+Add user (pour aj toutes les info)
+User add (ajouter utilisateur sans info)
+ 
+ 
+
+ 
+
+A partir du user Tech2, créer des dossiers : 
+ 
+Apt search tree 
+Faire appelle provisoirement au root pour faire un tree
+ 
+Pour faire apt install tree
+Les disques de la machine
+ 
+Une fois un disque dur ajouté, comment rendre opérationnel ce disque dur et y mettre des choses.
+
+ 
+S : serial : sata
+H : ide 
+La mémoire paginée 
+
+mount -a (rafraichir au lieu d’un reboot après ajout d’un ddr)
+ 
+Tout le materiel connu par le linux :
+ 
+Les droits 
+ 
+
+ 
+Création tech 3 
+ 
+Création groupe
+Sudo addgroup
+![Alt text](image-1.png)
+![Alt text](image.png)
+
+Cat /etc/sudoers pour vérifier que ça a bien été créé
+
+Ajouter des utilisateurs dans un groupe : deux méthode : 
+ 
+ 
+
+Vérifier : cat /etc/group 
+ 
+
+
